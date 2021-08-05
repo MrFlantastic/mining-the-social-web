@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import selenium as selenium
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from selenium import webdriver
+from selenium.webdriver.common.proxy import Proxy, ProxyType
+import time
 
+proxy_ip_port = ''
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+driver = webdriver.Chrome('/Users/MFlanagan/Desktop/chromedriver')
 
+driver.get('https://whatismyipaddress.com')
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+time.sleep(8)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+driver.quit()
