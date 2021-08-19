@@ -43,13 +43,40 @@ To start the data download, we will get all the followers from my profile. We ne
     me = api.get_user(screen_name = 'MrFlantastic')
     me.id
 
-My user ID is:
+My user ID is: 486977981
 
 A network consists of nodes (or vertices) and links (or edges). For this network, we will use individual user accounts as nodes and followers as links. Our goal, therefore, is to create an edge DataFrame of user IDs with two columns: source and target. For each row, the target follows the source. To start, we want to list all of my followers as targets.
 
-The screenshot above shows the structure of the DataFrame we want to create. The first column, the “source”, is my user ID (1210627806) and the second column, the “target”, are all of my followers.
+Let's discuss the structure of the DataFrame we want to create. The first column, the “source”, is my user ID (486977981) and the second column, the “target”, are all of my followers.
 
-The following code creates a list of my followers.
+The following code creates a list of my 780 followers.
+    
+    user_list = ["486977981"]
+    follower_list = []
+    for user in user_list:
+        followers = []
+        try:
+            for page in tweepy.Cursor(api.followers_ids, user_id=user).pages():
+                followers.extend(page)
+                print(len(followers))
+        except tweepy.TweepError:
+            print("error")
+            continue
+        follower_list.append(followers)
+
+Now that we have a list of all the followers we can put them into a DataFrame.
+
+    df = pd.DataFrame(columns=['source','target']) #Empty DataFrame
+    df['target'] = follower_list[0] #Set the list of followers as the target column
+    df['source'] = 1210627806 #Set my user ID as the source 
+
+This is not a very interesting network. To visualize this simple network, we can use the NetworkX package to convert the DataFrame into a graph or network.
+
+    import networkx as nx
+    G = nx.from_pandas_edgelist(df, 'source', 'target') #Turn df into graph
+    pos = nx.spring_layout(G) #specify layout for visual
+
+Then we plot the graph using matplotlib.
 
 
 fin.
