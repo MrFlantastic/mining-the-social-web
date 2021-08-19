@@ -139,6 +139,7 @@ Once the data has been converted to a graph, we can run some basic network analy
 There are XXX nodes in my network!
 
 ###Influence
+
 We can also find the most influential nodes in the network using centrality measures. The most simple measure of centrality is Degree Centrality, which is just a function of the number of connections each node has. The following code finds the number of connections each node has i.e. the degree of each node and sorts them in descending order.
     
     G_sorted = pd.DataFrame(sorted(G.degree, key=lambda x: x[1], reverse=True))
