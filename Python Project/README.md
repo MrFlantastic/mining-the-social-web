@@ -196,7 +196,7 @@ Now we can visualize this graph using the following code.
 
 What a mess. I’m sure there are ways to make that visual look better using matplotlib, but at this point, I'll export the file to csv format and use Gephi to visualize.
 
-    combined = combined.rename(columns={"names": "Id"}) #I've found Gephi really likes when your node column is called 'Id'
+    combined = combined.rename(columns={"names": "Id"}) #Gephi really likes when your node column is called 'Id'
     edges = nx.to_pandas_edgelist(G_tmp)
     nodes = combined['Id']
     
