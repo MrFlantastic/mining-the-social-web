@@ -49,7 +49,7 @@ A network consists of nodes (or vertices) and links (or edges). For this network
 
 The screenshot above shows the structure of the DataFrame we want to create. The first column, the “source”, is my user ID (1210627806) and the second column, the “target”, are all of my followers.
 
-The following code creates a list of my 450 followers.
+The following code creates a list of my followers.
 
 
 fin.
