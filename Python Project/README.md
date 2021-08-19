@@ -68,7 +68,7 @@ Now that we have a list of all the followers we can put them into a DataFrame.
 
     df = pd.DataFrame(columns=['source','target']) #Empty DataFrame
     df['target'] = follower_list[0] #Set the list of followers as the target column
-    df['source'] = 1210627806 #Set my user ID as the source 
+    df['source'] = 486977981 #Set my user ID as the source 
 
 This is not a very interesting network. To visualize this simple network, we can use the NetworkX package to convert the DataFrame into a graph or network.
 
