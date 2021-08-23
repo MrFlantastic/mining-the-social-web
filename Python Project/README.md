@@ -146,16 +146,16 @@ We can also find the most influential nodes in the network using centrality meas
     G_sorted.columns = [‘nconst’,’degree’]
     G_sorted.head()
 
-The node in my network with the highest degree is node 3.392344e+07 or @ .  has a degree of 5095. 5000 of these connections are the 5000 followers of this node that we scraped. But this means there are 95 additional connections — meaning  follows 95 accounts that follow me.
+The node in my network with the highest degree is node 33923443 or @ 6BillionPeople has a degree of 5095. 5000 of these connections are the 5000 followers of this node that we scraped. But this means there are 95 additional connections — meaning  follows 95 accounts that follow me.
 
 To get the username of an account given the user ID use the following code, similar to how we got our user ID above.
 
-    u = api.get_user(XXXXXX)
+    u = api.get_user(33923443)
     u.screen_name
 
-Because the network is so big now (over XXXXX nodes), any analytics will take a long time to run and any visualization will be a complete mess. For the rest of this tutorial, we will filter the network down to a more manageable number of nodes. We do this using the `k_core` function of `NetworkX`. The `k_core` function filters out nodes with degree less than a given number, k.
+Because the network is so big now (over 500k nodes), any analytics will take a long time to run and any visualization will be a complete mess. For the rest of this tutorial, we will filter the network down to a more manageable number of nodes. We do this using the `k_core` function of `NetworkX`. The `k_core` function filters out nodes with degree less than a given number, k.
 
-In this example, I set k equal to 10, which reduces the number of nodes in the graph to about 1000.
+In this example, I set k equal to 10, which reduces the number of nodes in the graph to about 3000.
 
     G_tmp = nx.k_core(G, 10) #Exclude nodes with degree less than 10
 
