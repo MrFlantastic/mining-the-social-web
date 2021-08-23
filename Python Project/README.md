@@ -136,7 +136,7 @@ Once the data has been converted to a graph, we can run some basic network analy
   
     G.number_of_nodes() #Find the total number of nodes in this graph
 
-There are XXX nodes in my network!
+There are 505,416 nodes in my network!
 
 ##Influence
 
@@ -146,7 +146,7 @@ We can also find the most influential nodes in the network using centrality meas
     G_sorted.columns = [‘nconst’,’degree’]
     G_sorted.head()
 
-The node in my network with the highest degree is node XXXXXXXX or @ TheSolarCo. TheSolarCo has a degree of 5039. 5000 of these connections are the 5000 followers of this node that we scraped. But this means there are 39 additional connections — meaning TheSolarCo follows 39 accounts that follow me.
+The node in my network with the highest degree is node 3.392344e+07 or @ .  has a degree of 5095. 5000 of these connections are the 5000 followers of this node that we scraped. But this means there are 95 additional connections — meaning  follows 95 accounts that follow me.
 
 To get the username of an account given the user ID use the following code, similar to how we got our user ID above.
 
