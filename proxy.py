@@ -3,7 +3,7 @@ from selenium.webdriver.common.proxy import Proxy, ProxyType
 import time
 
 ### find elite proxy ip and port from https://free-proxy-list.net/
-proxy_ip_import = '161.202.226.194:80'
+proxy_ip_import = '54.37.18.143:8080'
 
 proxy = Proxy()
 proxy.proxy_type = ProxyType.MANUAL
